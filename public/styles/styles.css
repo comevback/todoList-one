@@ -3,7 +3,7 @@ body{
 }
 
 h1{
-    margin: auto;
+    margin: 3rem;
     text-align: center;
 }
 
@@ -11,15 +11,46 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60vh;
+    margin-top: 4rem;
 }
 
 .todobox{
-    width: 11rem;
-    min-height: 2rem;
+    width: 20rem;
+    min-height: 40px;
     display: flex;
+    justify-content: stretch;
     align-items: center;
     background-color: azure;
+    word-wrap:break-word;
+    border: solid 1px forestgreen;
+    border-radius: 5px;
+}
+
+p{
+    margin: 0;
+}
+
+.addForm{
+    width: 20rem;
+    min-height: 40px;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    background-color: azure;
+    word-wrap:break-word;
+    border: solid 1px forestgreen;
+    border-radius: 5px;
+}
+
+.addText{
+    height: 30px;
+    width: 15rem;
+    margin: 5px;
+}
+
+.addBtn{
+    margin-left: auto;
+    margin-right: 5px;
 }
 
 .delete{
@@ -31,5 +62,4 @@ footer{
     position: fixed;
     bottom: 0px;
     width: 100%;
-    text-align: center;
 }

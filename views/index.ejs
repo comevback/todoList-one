@@ -7,14 +7,16 @@
         <% if(locals.items){ %>
             <% items.forEach((item)=>{ %>
                 <div class="todobox">
-                    <input type="checkbox">
-                    <%= item %>
-                        <input class="delete" type="button" value="delete">
+                    <input name="checkbox" type="checkbox">
+                    <p>
+                        <%= item %>
+                    </p>
+                    <input class="delete" name="delete" type="button" value="delete">
                 </div>
                 <% })} %>
-                    <form action="/add" method="POST">
-                        <input type="text" name="input" placeholder="Please input your plan">
-                        <input type="submit" value="+">
+                    <form class="addForm" action="/add" method="POST">
+                        <input class="addText" type="text" name="input" placeholder="Please input your plan">
+                        <input class="addBtn" type="submit" value="+">
                     </form>
     </div>
     <%- include("partials/footer.ejs") %>
