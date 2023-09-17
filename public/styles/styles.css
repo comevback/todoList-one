@@ -12,26 +12,31 @@ h1{
     flex-direction: column;
     align-items: center;
     margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 .todobox{
-    width: 20rem;
-    min-height: 40px;
+    width: 30rem;
+    min-height: 60px;
     display: flex;
     justify-content: stretch;
     align-items: center;
     background-color: azure;
     word-wrap:break-word;
+    overflow-wrap: break-word;
     border: solid 1px forestgreen;
     border-radius: 5px;
 }
 
 p{
+    size: 30px;
     margin: 0;
+    max-width: 24rem;
+    word-wrap: break-word;
 }
 
 .addForm{
-    width: 20rem;
+    width: 30rem;
     min-height: 40px;
     display: flex;
     justify-content: stretch;
@@ -44,7 +49,7 @@ p{
 
 .addText{
     height: 30px;
-    width: 15rem;
+    width: 27rem;
     margin: 5px;
 }
 

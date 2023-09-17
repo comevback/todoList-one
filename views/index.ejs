@@ -6,17 +6,28 @@
     <div class="todolist">
         <% if(locals.items){ %>
             <% items.forEach((item)=>{ %>
-                <div class="todobox">
-                    <input name="checkbox" type="checkbox">
-                    <p>
-                        <%= item %>
-                    </p>
-                    <input class="delete" name="delete" type="button" value="delete">
-                </div>
+                <form class="delete-form" action="/delete" method="POST">
+                    <div class="todobox">
+                        <input name="checkbox" value="<%= item.context %>" type="checkbox"
+                            onchange="this.form.submit()">
+                        <p>
+                            <%= item.context %>
+                        </p>
+                    </div>
+                </form>
                 <% })} %>
                     <form class="addForm" action="/add" method="POST">
-                        <input class="addText" type="text" name="input" placeholder="Please input your plan">
+                        <input class="addText" type="text" name="input" placeholder="New Plan">
                         <input class="addBtn" type="submit" value="+">
                     </form>
     </div>
     <%- include("partials/footer.ejs") %>
+
+
+        <!--<form class="todobox" action="/delete" method="POST">
+        <input name="checkbox" type="checkbox" onChange="this.form.submit()">
+        <p>
+            <%#= item.context %> 
+        </p>
+        <input class="delete" name="delete" type="submit" value="delete" data-id="<%#=item._id %>">
+    </form>-->
