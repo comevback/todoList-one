@@ -35,6 +35,10 @@ p{
     word-wrap: break-word;
 }
 
+.lined{
+    text-decoration-line: line-through;
+}
+
 .addForm{
     width: 30rem;
     min-height: 40px;

@@ -1,24 +1,27 @@
 <%- include("partials/header.ejs") %>
     <h1>
-        <%= new Date() %>
+        <%= title %>
     </h1>
 
     <div class="todolist">
+
         <% if(locals.items){ %>
             <% items.forEach((item)=>{ %>
                 <form class="delete-form" action="/delete" method="POST">
                     <div class="todobox">
-                        <input name="checkbox" value="<%= item.context %>" type="checkbox"
+                        <input class="checkbox" name="checkbox" value="<%=item._id%>" type="checkbox"
                             onchange="this.form.submit()">
                         <p>
                             <%= item.context %>
                         </p>
+                        <input type="hidden" name="listName" value="<%= title %>">
                     </div>
                 </form>
                 <% })} %>
+
                     <form class="addForm" action="/add" method="POST">
                         <input class="addText" type="text" name="input" placeholder="New Plan">
-                        <input class="addBtn" type="submit" value="+">
+                        <button class="addBtn" type="submit" name="listName" value="<%= title %>">+</button>
                     </form>
     </div>
     <%- include("partials/footer.ejs") %>
