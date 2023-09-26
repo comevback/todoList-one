@@ -1,11 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import { render } from "ejs";
+import {mongoUrl} from "./config.js";
 
 const app = express();
 const port = 3000;
-const mongoUrl = "mongodb://localhost:27017/todoList"
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
