@@ -1,7 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import {mongoUrl} from "./config.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -10,7 +11,7 @@ const port = 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect(mongoUrl).then(console.log("Successfully Connected to the MongoDB!"));
+mongoose.connect(process.env.MongoURL).then(console.log("Successfully Connected to the MongoDB!"));
 const todoSchema = new mongoose.Schema({
     context: String
 });
